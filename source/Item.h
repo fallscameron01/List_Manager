@@ -3,6 +3,10 @@
 
 #include <string>
 using std::string;
+using std::getline;
+
+#include <fstream>
+using std::istream;
 
 #include "Status.h"
 
@@ -13,6 +17,10 @@ class Item
     short m_priority;
     Status m_status;
   public:
+    Item()
+      : m_content(" "), m_priority(0), m_status(static_cast<Status>(0))
+    { }
+
     string getContent() { return m_content; }
     void setContent(string content) { m_content = content; }
     
@@ -21,6 +29,8 @@ class Item
 
     Status getStatus() { return m_status; }
     void setContent(Status status) { m_status = status; }
+
+    friend istream& operator>>(istream& in, Item item);
 };
 
 #endif // !ITEM_H
