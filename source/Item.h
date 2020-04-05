@@ -7,6 +7,7 @@ using std::getline;
 
 #include <fstream>
 using std::istream;
+using std::ifstream;
 
 #include "Status.h"
 
