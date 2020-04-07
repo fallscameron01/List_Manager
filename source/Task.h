@@ -13,6 +13,7 @@ class Task :
     vector<Item> m_subtasks;
   public:
     friend istream& operator>>(istream& in, Task task);
+    friend ostream& operator<<(ostream& out, Task task);
 };
 
 #endif // !TASK_H

@@ -30,3 +30,21 @@ istream& operator>>(istream& in, Task task)
 
   return in;
 }
+
+ostream& operator<<(ostream& out, Task task)
+{
+  out << "Task: " << task.m_content << endl;
+  out << "\tPriority: " << task.m_priority << endl;
+  out << "\tStatus: " << task.m_status << endl;
+
+  if (!task.m_subtasks.empty())
+  {
+    out << "\tSubtasks:" << endl;
+    for (Item i : task.m_subtasks)
+    {
+      out << i << endl;
+    }
+  }
+  
+  return out;
+}

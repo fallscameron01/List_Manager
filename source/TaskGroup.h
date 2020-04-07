@@ -15,6 +15,7 @@ class TaskGroup
     { }
 
     friend istream& operator>>(istream& in, TaskGroup group);
+    friend ostream& operator<<(ostream& out, TaskGroup group);
 };
 
 

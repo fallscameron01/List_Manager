@@ -2,12 +2,10 @@
 #define ITEM_H
 
 #include <string>
-using std::string;
-using std::getline;
-
 #include <fstream>
-using std::istream;
-using std::ifstream;
+#include <iostream>
+
+using namespace std;
 
 #include "Status.h"
 
@@ -32,6 +30,7 @@ class Item
     void setContent(Status status) { m_status = status; }
 
     friend istream& operator>>(istream& in, Item item);
+    friend ostream& operator<<(ostream& out, Item item);
 };
 
 #endif // !ITEM_H
