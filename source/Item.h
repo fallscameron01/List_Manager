@@ -24,13 +24,12 @@ class Item
     void setContent(string content) { m_content = content; }
     
     short getPriority() { return m_priority; }
-    void setContent(short priority) { m_priority = priority; }
+    void setPriority(short priority) { m_priority = priority; }
 
     Status getStatus() { return m_status; }
-    void setContent(Status status) { m_status = status; }
+    void setStatus(Status status) { m_status = status; }
 
-    friend istream& operator>>(istream& in, Item item);
-    friend ostream& operator<<(ostream& out, Item item);
+    friend ostream& operator<<(ostream& out, Item& item);
 };
 
 #endif // !ITEM_H
