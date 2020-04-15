@@ -14,8 +14,8 @@ class TaskGroup
       : m_filename(filename), m_name(name)
     { }
 
-    friend istream& operator>>(istream& in, TaskGroup group);
-    friend ostream& operator<<(ostream& out, TaskGroup group);
+    friend istream& operator>>(istream& in, TaskGroup& group);
+    friend ostream& operator<<(ostream& out, TaskGroup& group);
 };
 
 
