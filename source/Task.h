@@ -12,8 +12,9 @@ class Task :
   private:
     vector<Item> m_subtasks;
   public:
-    friend istream& operator>>(istream& in, Task task);
-    friend ostream& operator<<(ostream& out, Task task);
+    void push_subtask(const Item& subtask);
+
+    friend ostream& operator<<(ostream& out, Task& task);
 };
 
 #endif // !TASK_H
