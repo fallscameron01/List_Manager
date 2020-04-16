@@ -12,9 +12,12 @@ class TaskGroup
   public:
     TaskGroup(string filename, string name)
       : m_filename(filename), m_name(name)
-    { }
+    { loadList(); }
 
-    friend istream& operator>>(istream& in, TaskGroup& group);
+    TaskGroup(const TaskGroup & t);
+
+    void loadList();
+
     friend ostream& operator<<(ostream& out, TaskGroup& group);
 };
 
