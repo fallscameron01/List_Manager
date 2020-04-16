@@ -10,9 +10,7 @@ class TaskGroup
     string m_filename;
     string m_name;
   public:
-    TaskGroup(string filename, string name)
-      : m_filename(filename), m_name(name)
-    { loadList(); }
+    TaskGroup(string& filename, string& name);
 
     TaskGroup(const TaskGroup & t);
 
