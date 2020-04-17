@@ -16,6 +16,8 @@ class TaskGroup
 
     void loadList();
 
+    string getName() const { return m_name; }
+
     friend ostream& operator<<(ostream& out, TaskGroup& group);
 };
 

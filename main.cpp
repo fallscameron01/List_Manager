@@ -5,10 +5,17 @@ int main()
 {
   vector<TaskGroup> groups;
 
+  int listChoice = 0;
+
   loadLists(groups);
 
-  for (auto& g : groups)
-    cout << g << endl;
+  while (listChoice < 1 || listChoice >(groups.size() + 1))
+  {
+    listChoice = menuLists(groups);
+
+    if (listChoice < 1 || listChoice >(groups.size() + 1))
+      cout << "\nINVALID INPUT: Please try again." << endl;
+  }
 
   return 0;
 }
