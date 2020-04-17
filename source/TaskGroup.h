@@ -18,7 +18,7 @@ class TaskGroup
 
     string getName() const { return m_name; }
 
-    friend ostream& operator<<(ostream& out, TaskGroup& group);
+    friend ostream& operator<<(ostream& out, const TaskGroup& group);
 };
 
 

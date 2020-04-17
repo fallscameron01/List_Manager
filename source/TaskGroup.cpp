@@ -80,14 +80,14 @@ void TaskGroup::loadList()
   fin.close();
 }
 
-ostream& operator<<(ostream& out, TaskGroup& group)
+ostream& operator<<(ostream& out, const TaskGroup& group)
 {
   out << "Group: " << group.m_name << endl;
   out << "File: " << group.m_filename << endl;
   out << "--------------------" << endl;
   for (Task t : group.m_tasks)
   {
-    out << t << endl;
+    out << t;
   }
   return out;
 }

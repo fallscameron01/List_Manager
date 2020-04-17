@@ -21,4 +21,7 @@ void loadLists(vector<TaskGroup>& groups);
 // Menu for selecting a list
 int menuLists(const vector<TaskGroup>& groups);
 
+// Menu for options on a list
+int menuTasks(const vector<TaskGroup>& groups, const int choice);
+
 #endif

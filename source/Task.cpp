@@ -17,7 +17,7 @@ ostream& operator<<(ostream& out, Task& task)
     out << "\tSubtasks:" << endl;
     for (Item i : task.m_subtasks)
     {
-      out << i << endl;
+      out << i;
     }
   }
   
