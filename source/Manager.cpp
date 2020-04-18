@@ -15,8 +15,13 @@ void loadLists(vector<TaskGroup>& groups)
   return;
 }
 
-bool nameIsValid(const string& name)
+bool nameIsValid(const vector<TaskGroup>& groups, const string& name)
 {
+  for (const TaskGroup& g : groups)
+  {
+    if (name == g.getName())
+      return false;
+  }
   return true;
 }
 
@@ -72,13 +77,16 @@ void createNewList(vector<TaskGroup>& groups)
 {
   string name = "";
   string filename = "";
+  bool validName = false;
 
   do
   {
     cout << "Enter the name for your new list or type \'quit\' to cancel: ";
     getline(cin, name);
 
-    if (!nameIsValid(name)) // invalid name
+    validName = nameIsValid(groups, name);
+
+    if (!validName) // invalid name
       cout << "INVALID NAME: Make sure the name is not already in use!" << endl;
     else if (name != "quit") // not quit
     {
@@ -86,7 +94,7 @@ void createNewList(vector<TaskGroup>& groups)
       filename = name + ".txt";
       groups.push_back(TaskGroup(filename, name));
     }
-  } while (name != "quit" && !nameIsValid(name));
+  } while (name != "quit" && !validName);
 
   return;
 }

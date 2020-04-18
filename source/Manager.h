@@ -20,7 +20,7 @@ using namespace std;
 // loads all the lists in the directory
 void loadLists(vector<TaskGroup>& groups);
 
-bool nameIsValid(const string& name);
+bool nameIsValid(const vector<TaskGroup>& groups, const string& name);
 
 /*---------- Menus ----------*/
 
