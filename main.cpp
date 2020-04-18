@@ -12,19 +12,20 @@ int main()
 
   loadLists(groups);
 
-  while (listChoice != (groups.size() + 2)) // main loop, while quit not selected
+  do // main loop, while quit is not selected
   {
     listChoice = 0;
     taskChoice = 0;
 
-    while (listChoice < 1 || listChoice > (groups.size() + 2)) // Selecting a list
+    do// Selecting a list
     {
       listChoice = menuLists(groups);
       cin.ignore(LINE_LENGTH, '\n');
 
       if (listChoice < 1 || listChoice > (groups.size() + 2))
         cout << "\nINVALID INPUT: Please try again." << endl;
-    }
+
+    } while (listChoice < 1 || listChoice >(groups.size() + 2));
 
     cout << endl;
 
@@ -37,7 +38,8 @@ int main()
     {
       createNewList(groups);
     }
-  }
+
+  } while (listChoice != (groups.size() + 2));
 
   return 0;
 }
