@@ -53,13 +53,12 @@ int menuTasks(const vector<TaskGroup>& groups, const int listNum)
   cout << groups[listNum-1] << endl;
 
   cout << "\t---------- Options ----------" << endl;
-  cout << "1. View a task." << endl;
-  cout << "2. Edit a task." << endl;
-  cout << "3. Add a task." << endl;
-  cout << "4. Remove a task." << endl;
-  cout << "5. Change list Name." << endl;
-  cout << "6. Delete the list." << endl;
-  cout << "7. Go back to list selection." << endl;
+  cout << "1. Edit a task." << endl;
+  cout << "2. Add a task." << endl;
+  cout << "3. Remove a task." << endl;
+  cout << "4. Change list Name." << endl;
+  cout << "5. Delete the list." << endl;
+  cout << "6. Go back to list selection." << endl;
   
   while (choice < MIN_CHOICE || choice > MAX_CHOICE)
   {
