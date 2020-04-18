@@ -78,6 +78,8 @@ void TaskGroup::loadList()
   }
 
   fin.close();
+
+  return;
 }
 
 ostream& operator<<(ostream& out, const TaskGroup& group)

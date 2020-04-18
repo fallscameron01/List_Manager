@@ -15,13 +15,24 @@ namespace fs = std::experimental::filesystem;
 
 using namespace std;
 
+/*---------- File Management ----------*/
+
 // loads all the lists in the directory
 void loadLists(vector<TaskGroup>& groups);
+
+bool nameIsValid(const string& name);
+
+/*---------- Menus ----------*/
 
 // Menu for selecting a list
 int menuLists(const vector<TaskGroup>& groups);
 
 // Menu for options on a list
 int menuTasks(const vector<TaskGroup>& groups, const int choice);
+
+/*---------- List Management ----------*/
+
+// Creating a new list
+void createNewList(vector<TaskGroup>& groups);
 
 #endif
