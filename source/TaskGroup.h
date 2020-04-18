@@ -15,6 +15,7 @@ class TaskGroup
     TaskGroup(const TaskGroup & t);
 
     void loadList();
+    void printTasks() const;
 
     string getName() const { return m_name; }
 

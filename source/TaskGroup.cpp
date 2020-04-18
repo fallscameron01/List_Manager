@@ -82,6 +82,18 @@ void TaskGroup::loadList()
   return;
 }
 
+void TaskGroup::printTasks() const
+{
+  const int NUM_TASKS = m_tasks.size();
+
+  for (int i = 0; i < NUM_TASKS; i++)
+  {
+    cout << i << ". " << m_tasks[i].getContent() << endl;
+  }
+
+  return;
+}
+
 ostream& operator<<(ostream& out, const TaskGroup& group)
 {
   out << "Group: " << group.m_name << endl;
