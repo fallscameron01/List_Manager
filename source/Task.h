@@ -14,6 +14,8 @@ class Task :
   public:
     void push_subtask(const Item& subtask);
 
+    void printSubtasks() const;
+
     friend ostream& operator<<(ostream& out, Task& task);
 };
 

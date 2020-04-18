@@ -6,6 +6,18 @@ void Task::push_subtask(const Item& subtask)
   return;
 }
 
+void Task::printSubtasks() const
+{
+  const int NUM_SUBTASKS = m_subtasks.size();
+
+  for (int i = 0; i < NUM_SUBTASKS; i++)
+  {
+    cout << i << ". " << m_subtasks[i].getContent() << endl;
+  }
+
+  return;
+}
+
 ostream& operator<<(ostream& out, Task& task)
 {
   out << "Task: " << task.m_content << endl;
