@@ -40,17 +40,17 @@ int menuLists(const vector<TaskGroup>& groups)
   cout << "\nEnter the number of the list you wish to edit or " << (NUM_LISTS + 1) << " to create a new list or " << (NUM_LISTS + 2) << " to quit: ";
   cin >> choice;
 
-  return choice;
+  return choice - 1; // subtract 1 to make easier to index
 }
 
-int menuTasks(const vector<TaskGroup>& groups, const int listNum)
+int menuTasks(const TaskGroup& list)
 {
   const int MIN_CHOICE = 1;
   const int MAX_CHOICE = 7;
 
   int choice = 0;
 
-  cout << groups[listNum-1] << endl;
+  cout << list << endl;
 
   cout << "\t---------- Options ----------" << endl;
   cout << "1. Edit a task." << endl;
@@ -68,7 +68,8 @@ int menuTasks(const vector<TaskGroup>& groups, const int listNum)
     if (choice < MIN_CHOICE || choice > MAX_CHOICE)
       cout << "\nINVALID INPUT: Please try again." << endl;
   }
-  
+
+  cout << endl;
   return choice;
 }
 
@@ -95,5 +96,33 @@ void createNewList(vector<TaskGroup>& groups)
     }
   } while (name != "quit" && !validName);
 
+  return;
+}
+
+int menuChooseTask(const TaskGroup& list)
+{
+  const int MIN_CHOICE = 1;
+  const int NUM_TASKS = list.getNumTasks();
+
+  int choice = 0;
+
+  do
+  {
+    list.printTasks();
+    cout << (NUM_TASKS + 1) << ". Cancel" << endl;
+    cout << "\nEnter the number of the task you wish to edit or " << (NUM_TASKS + 1) << " to cancel: ";
+
+    cin >> choice;
+
+    if (choice < MIN_CHOICE || choice > NUM_TASKS + 1)
+      cout << "\nINVALID INPUT: Please try again." << endl;
+  } while (choice < MIN_CHOICE || choice > NUM_TASKS + 1);
+
+  cout << endl;
+  return choice - 1; // subtract 1 to make easier to index
+}
+
+void editTask(Task& task)
+{
   return;
 }

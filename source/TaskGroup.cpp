@@ -86,9 +86,11 @@ void TaskGroup::printTasks() const
 {
   const int NUM_TASKS = m_tasks.size();
 
+  cout << "\t---------- Tasks ----------" << endl;
+
   for (int i = 0; i < NUM_TASKS; i++)
   {
-    cout << i << ". " << m_tasks[i].getContent() << endl;
+    cout << (i+1) << ". " << m_tasks[i].getContent() << endl;
   }
 
   return;

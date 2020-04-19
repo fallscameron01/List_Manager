@@ -28,7 +28,7 @@ bool nameIsValid(const vector<TaskGroup>& groups, const string& name);
 int menuLists(const vector<TaskGroup>& groups);
 
 // Menu for options on a list
-int menuTasks(const vector<TaskGroup>& groups, const int choice);
+int menuTasks(const TaskGroup& list);
 
 /*---------- List Management ----------*/
 
@@ -37,7 +37,7 @@ void createNewList(vector<TaskGroup>& groups);
 
 /*---------- Task Management ----------*/
 
-// Menu for selecting a task from a list
+// Menu for selecting a task from a list to edit
 int menuChooseTask(const TaskGroup& list);
 
 // Processes editing of a task and its subtasks

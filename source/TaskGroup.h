@@ -18,6 +18,8 @@ class TaskGroup
     void printTasks() const;
 
     string getName() const { return m_name; }
+    int getNumTasks() const { return m_tasks.size(); }
+    Task& getTask(const int ind) { return m_tasks[ind]; }
 
     friend ostream& operator<<(ostream& out, const TaskGroup& group);
 };
