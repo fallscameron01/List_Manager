@@ -17,6 +17,8 @@ class TaskGroup
     void loadList();
     void printTasks() const;
 
+    void push_task(const Task& task);
+
     string getName() const { return m_name; }
     int getNumTasks() const { return m_tasks.size(); }
     Task& getTask(const int ind) { return m_tasks[ind]; }

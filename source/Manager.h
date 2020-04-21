@@ -44,7 +44,7 @@ int menuChooseTask(const TaskGroup& list);
 void editTask(Task& task);
 
 // Adding a new task to a list
-void addTask(TaskGroup& task);
+void addTask(TaskGroup& group);
 
 // Removing and deleting a task from a list
 void removeTask(TaskGroup& task);

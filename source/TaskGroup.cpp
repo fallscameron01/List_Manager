@@ -96,6 +96,12 @@ void TaskGroup::printTasks() const
   return;
 }
 
+void TaskGroup::push_task(const Task& task)
+{
+  m_tasks.push_back(task);
+  return;
+}
+
 ostream& operator<<(ostream& out, const TaskGroup& group)
 {
   out << "Group: " << group.m_name << endl;

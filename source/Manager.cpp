@@ -122,7 +122,66 @@ int menuChooseTask(const TaskGroup& list)
   return choice - 1; // subtract 1 to make easier to index
 }
 
+// TODO: Implement editTask()
 void editTask(Task& task)
 {
+  return;
+}
+
+void addTask(TaskGroup& group)
+{
+  const int LINE_LENGTH = 255;
+
+  Task newTask;
+
+  string content;
+
+  short priority;
+  short tempStatus;
+  Status status;
+
+  int numSubtasks;
+  
+  cout << "Enter the content of the new task: ";
+  getline(cin, content);
+  
+  cout << "Enter the priority: ";
+  cin >> priority;
+  
+  cout << "Enter the status: ";
+  cin >> tempStatus;
+  status = static_cast<Status>(tempStatus);
+
+  newTask.setContent(content);
+  newTask.setPriority(priority);
+  newTask.setStatus(status);
+
+  cout << "Enter the number of subtasks: ";
+  cin >> numSubtasks;
+  
+  for (int i = 0; i < numSubtasks; i++)
+  {
+    Item subtask;
+
+    cin.ignore(LINE_LENGTH, '\n');
+    cout << "Enter the content of subtask " << i << ": ";
+    getline(cin, content);
+
+    cout << "Enter the priority of subtask " << i << ": ";
+    cin >> priority;
+
+    cout << "Enter the status of subtask " << i << ": ";
+    cin >> tempStatus;
+    status = static_cast<Status>(tempStatus);
+
+    subtask.setContent(content);
+    subtask.setPriority(priority);
+    subtask.setStatus(status);
+
+    newTask.push_subtask(subtask);
+  }
+
+  group.push_task(newTask);
+
   return;
 }

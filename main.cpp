@@ -3,7 +3,7 @@
 
 int main()
 {
-  const int LINE_LENGTH = 256;
+  const int LINE_LENGTH = 255;
 
   vector<TaskGroup> groups;
 
@@ -44,6 +44,7 @@ int main()
             editTask(groups[listChoice].getTask(taskChoice));
           break;
         case 2: // add task
+          addTask(groups[listChoice]);
           break;
         case 3: // remove task
           break;
