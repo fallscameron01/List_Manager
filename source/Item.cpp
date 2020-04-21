@@ -1,3 +1,9 @@
+/*
+  Programmer: Cameron Falls
+  File: Item.cpp
+  Purpose: This file contains the function implementations of the class Item, which represents a subtask.
+*/
+
 #include "Item.h"
 
 ostream& operator<<(ostream& out, Item& item)

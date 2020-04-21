@@ -1,3 +1,9 @@
+/*
+  Programmer: Cameron Falls
+  File: TaskGroup.h
+  Purpose: This file contains the class TaskGroup, which represents a list of tasks.
+*/
+
 #ifndef TASKGROUP_H
 #define TASKGROUP_H
 

@@ -1,3 +1,9 @@
+/*
+  Programmer: Cameron Falls
+  File: Status.h
+  Purpose: This file contains the enumeration Status, which represents the status of a task.
+*/
+
 #ifndef STATUS_H
 #define STATUS_H
 

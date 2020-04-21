@@ -1,3 +1,9 @@
+/*
+  Programmer: Cameron Falls
+  File: TaskGroup.cpp
+  Purpose: This file contains the function implementations of the class TaskGroup, which represents a list of tasks.
+*/
+
 #include "TaskGroup.h"
 
 TaskGroup::TaskGroup(string& filename, string& name)

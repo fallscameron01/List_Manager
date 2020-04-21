@@ -1,3 +1,9 @@
+/*
+  Programmer: Cameron Falls
+  File: Item.h
+  Purpose: This file contains the class Item, which represents a subtask.
+*/
+
 #ifndef ITEM_H
 #define ITEM_H
 

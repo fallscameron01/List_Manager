@@ -1,3 +1,9 @@
+/*
+  Programmer: Cameron Falls
+  File: main.cpp
+  Purpose: This file contains the program main.
+*/
+
 #include "source/TaskGroup.h"
 #include "source/Manager.h"
 

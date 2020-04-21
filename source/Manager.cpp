@@ -1,3 +1,9 @@
+/*
+  Programmer: Cameron Falls
+  File: Manager.cpp
+  Purpose: This file contains function implementations for functions for use managing list from main.
+*/
+
 #include "Manager.h"
 
 void loadLists(vector<TaskGroup>& groups)

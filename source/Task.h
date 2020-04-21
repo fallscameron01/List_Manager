@@ -1,3 +1,9 @@
+/*
+  Programmer: Cameron Falls
+  File: Task.h
+  Purpose: This file contains the class Task which represents a task. Task is a child class of Item.
+*/
+
 #ifndef TASK_H
 #define TASK_H
 

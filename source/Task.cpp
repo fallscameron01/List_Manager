@@ -1,3 +1,9 @@
+/*
+  Programmer: Cameron Falls
+  File: Task.cpp
+  Purpose: This file contains the function implementations of the class Task which represents a task. Task is a child class of Item.
+*/
+
 #include "Task.h"
 
 void Task::push_subtask(const Item& subtask)
