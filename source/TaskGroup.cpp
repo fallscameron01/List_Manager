@@ -18,19 +18,6 @@ TaskGroup::TaskGroup(const TaskGroup& t)
   loadList();
 }
 
-// GENERAL FILE FORMATTING
-/*
-  int number of tasks
-  
-    string content line
-    short priority
-    short status
-  
-    int number of subtasks
-      string content line
-      short priority
-      short status
-*/
 void TaskGroup::loadList()
 {
   const int LINE_LENGTH = 255;
