@@ -15,6 +15,7 @@ using namespace std;
 
 #include "Status.h"
 
+// The Item class represents a subtask.
 class Item
 {
   protected:

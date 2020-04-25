@@ -9,6 +9,7 @@
 
 #include "Task.h"
 
+// The TaskGroup class represents a list of tasks.
 class TaskGroup
 {
   private:

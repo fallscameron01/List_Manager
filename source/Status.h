@@ -7,6 +7,7 @@
 #ifndef STATUS_H
 #define STATUS_H
 
+// The Status enumeration represents the status of a task.
 enum Status
 {
   finished = 0,

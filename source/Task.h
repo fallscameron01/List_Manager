@@ -12,6 +12,7 @@ using std::vector;
 
 #include "Item.h"
 
+// The Task class represents a task. Task is a public child of Item.
 class Task :
   public Item
 {
