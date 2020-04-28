@@ -6,6 +6,8 @@
 
 #include "Task.h"
 
+/*---------- Task Public Member Functions ----------*/
+
 void Task::push_subtask(const Item& subtask)
 {
   m_subtasks.push_back(subtask);
@@ -23,6 +25,8 @@ void Task::printSubtasks() const
 
   return;
 }
+
+/*---------- Task Friend Functions ----------*/
 
 ostream& operator<<(ostream& out, Task& task)
 {
