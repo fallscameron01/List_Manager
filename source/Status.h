@@ -7,13 +7,14 @@
 #ifndef STATUS_H
 #define STATUS_H
 
+// The Status enumeration represents the status of a task.
 enum Status
 {
-  finished = 0,
-  todo = 1,
-  inprogress = 2,
-  upnext = 3,
-  postponed = 4
+  finished = 0, // task is finished
+  todo = 1, // task is to be done in the future
+  inprogress = 2, // task is in progress
+  upnext = 3, // the next task to start
+  postponed = 4 // task has been put off
 };
 
 #endif // !STATUS_H
