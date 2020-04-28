@@ -24,6 +24,7 @@ class Item
     Status m_status; // the current status of the Item
 
   public:
+
     /*
       Description: Constructs an Item with no content, 0 priority, and 'finished' status.
     */
@@ -39,7 +40,7 @@ class Item
 
     /*
       Description: Sets the content of the Item.
-      Parameters: string - the content.
+      Parameters: content - the content.
       Returns: none.
     */
     void setContent(string content) { m_content = content; }
@@ -52,7 +53,7 @@ class Item
 
     /*
       Description: Sets the priority of the Item.
-      Parameters: short - the priority.
+      Parameters: priority - the priority.
       Returns: none.
     */
     void setPriority(short priority) { m_priority = priority; }
@@ -66,7 +67,7 @@ class Item
 
     /*
       Description: Sets the status of the Item.
-      Parameters: Status (enum) - the status.
+      Parameters: status - the status.
       Returns: none.
     */
     void setStatus(Status status) { m_status = status; }
