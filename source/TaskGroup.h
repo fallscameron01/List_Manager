@@ -13,9 +13,9 @@
 class TaskGroup
 {
   private:
-    vector<Task> m_tasks;
-    string m_filename;
-    string m_name;
+    vector<Task> m_tasks; // the tasks belonging to the group
+    string m_filename; // the name of the file in which the list is stored
+    string m_name; // the name of the list
 
   public:
 
