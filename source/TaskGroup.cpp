@@ -6,6 +6,8 @@
 
 #include "TaskGroup.h"
 
+/*---------- TaskGroup Public Member Functions ----------*/
+
 TaskGroup::TaskGroup(string& filename, string& name)
   : m_filename(filename), m_name(name)
 {
@@ -94,6 +96,8 @@ void TaskGroup::push_task(const Task& task)
   m_tasks.push_back(task);
   return;
 }
+
+/*---------- TaskGroup Friend Functions ----------*/
 
 ostream& operator<<(ostream& out, const TaskGroup& group)
 {
