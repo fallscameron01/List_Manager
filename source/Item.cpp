@@ -6,6 +6,8 @@
 
 #include "Item.h"
 
+/*---------- Item Friend Functions ----------*/
+
 ostream& operator<<(ostream& out, Item& item)
 {
   out << "\t\tTask: " << item.m_content << endl;
