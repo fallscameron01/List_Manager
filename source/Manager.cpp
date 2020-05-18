@@ -131,6 +131,73 @@ int menuChooseTask(const TaskGroup& list)
 // TODO: Implement editTask()
 void editTask(Task& task)
 {
+  const int MIN_OPTION = 1;
+  const int MAX_OPTION = 4;
+
+  const int LINE_LENGTH = 255;
+
+  int option = 0;
+  char continueEdit = 'n';
+  
+  string content;
+  short priority;
+  short tempStatus;
+  Status status;
+
+  do
+  {
+    cout << "\t---- Selected Task ----" << endl;
+    cout << task << endl << endl;
+
+    cout << "1. Edit Content" << endl;
+    cout << "2. Edit Priority" << endl;
+    cout << "3. Edit Status" << endl;
+    cout << "4. Edit Subtask" << endl;
+
+    do
+    {
+      cout << "Choose an option: ";
+      cin >> option;
+    
+      if (option < MIN_OPTION || option > MAX_OPTION)
+        cout << "INVALID INPUT: Please try again." << endl;
+    } while (option < MIN_OPTION || option > MAX_OPTION);
+
+    cin.ignore(LINE_LENGTH, '\n');
+
+    switch (option)
+    {
+      case 1:
+        cout << "Enter new content: ";
+        getline(cin, content);
+        task.setContent(content);
+        break;
+      case 2:
+        cout << "Enter Priority: ";
+        cin >> priority;
+        task.setPriority(priority);
+        break;
+      case 3:
+        cout << "Enter Status: ";
+        cin >> tempStatus;
+        status = static_cast<Status>(tempStatus);
+        task.setStatus(status);
+        break;
+      case 4:
+        break;
+    }
+
+    do
+    {
+      cout << "Continue editing this task? (y/n) ";
+      cin >> continueEdit;
+
+      if (continueEdit != 'n' && continueEdit != 'y')
+        cout << "INVALID INPUT: Please try again." << endl;
+    } while (continueEdit != 'n' && continueEdit != 'y');
+    
+  } while (continueEdit == 'y');
+
   return;
 }
 
