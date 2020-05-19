@@ -35,6 +35,12 @@ class Task :
     void printSubtasks() const;
 
     /*
+      Description: Returns the number of subtasks.
+      Returns: int - number of subtasks in m_subtasks.
+    */
+    int getNumSubtasks() const { return m_subtasks.size(); }
+
+    /*
       Description: Outputs the given Task to the ostream.
       Parameters: out - the ostream to output to.
                   task - the Task to output.
