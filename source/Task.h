@@ -29,6 +29,13 @@ class Task :
     void push_subtask(const Item& subtask);
 
     /*
+      Description: Pops a subtask at the given index in m_subtasks.
+      Parameters: index - the index of the subtask to pop.
+      Returns: none.
+    */
+    void pop_subtask(const int index);
+
+    /*
       Description: Prints the subtasks of the task to the console.
       Returns: none.
     */
