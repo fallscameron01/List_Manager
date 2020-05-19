@@ -41,6 +41,13 @@ class Task :
     int getNumSubtasks() const { return m_subtasks.size(); }
 
     /*
+      Description: Returns the subtask stored at the given index in m_subtasks.
+      Parameters: index - the index of the subtask.
+      Returns: Item - the subtask at the given index.
+    */
+    Item& getSubtask(const int index) { return m_subtasks[index]; }
+
+    /*
       Description: Outputs the given Task to the ostream.
       Parameters: out - the ostream to output to.
                   task - the Task to output.
