@@ -49,6 +49,10 @@ int menuChooseTask(const TaskGroup& list);
 // Processes editing of a task and its subtasks
 void editTask(Task& task);
 
+Item createSubTask();
+
+void editSubtask(Item& subtask);
+
 // Adding a new task to a list
 void addTask(TaskGroup& group);
 
