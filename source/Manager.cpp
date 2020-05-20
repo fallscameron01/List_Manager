@@ -272,7 +272,7 @@ Item createSubtask()
 
   string content;
   short priority;
-  short tempStatus; // TODO: create overload of operator>> for Status
+  short tempStatus;
   Status status;
 
   cout << "Enter content for the new subtask: ";

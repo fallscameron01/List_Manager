@@ -16,5 +16,5 @@ enum Status
   upnext = 3, // the next task to start
   postponed = 4 // task has been put off
 };
-
+// TODO: create overload of operator>> and operator<< for Status
 #endif // !STATUS_H
