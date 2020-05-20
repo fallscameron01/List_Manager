@@ -128,7 +128,6 @@ int menuChooseTask(const TaskGroup& list)
   return choice - 1; // subtract 1 to make easier to index
 }
 
-// TODO: Implement editTask()
 void editTask(Task& task)
 {
   const int MIN_OPTION = 1;
@@ -227,19 +226,23 @@ void editTask(Task& task)
         }
         subNumber--; // remove 1 for index accessing
         // TODO: No subtasks?
+
+        cin.ignore(LINE_LENGTH, '\n');
+        cout << endl;
+
         switch (subOption)
         {
           case 1:
             editSubtask(task.getSubtask(subNumber));
             break;
           case 2:
-            task.push_subtask(createSubTask());
+            task.push_subtask(createSubtask());
             break;
           case 3:
             task.pop_subtask(subNumber);
             break;
           case 4:
-            continueEdit = 'n';
+            continueEdit = 'y';
             break;
         }
         break;
@@ -263,9 +266,30 @@ void editTask(Task& task)
   return;
 }
 
-Item createSubTask()
+Item createSubtask()
 {
-  return Item();
+  Item newSub;
+
+  string content;
+  short priority;
+  short tempStatus; // TODO: create overload of operator>> for Status
+  Status status;
+
+  cout << "Enter content for the new subtask: ";
+  getline(cin, content);
+
+  cout << "Enter the priority of the new subtask: ";
+  cin >> priority;
+
+  cout << "Enter the status of the new subtask: ";
+  cin >> tempStatus;
+  status = static_cast<Status>(tempStatus);
+
+  newSub.setContent(content);
+  newSub.setPriority(priority);
+  newSub.setStatus(status); // TODO: add overload with int parameter
+
+  return newSub;
 }
 
 void editSubtask(Item& subtask)

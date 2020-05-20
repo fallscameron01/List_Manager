@@ -49,7 +49,7 @@ int menuChooseTask(const TaskGroup& list);
 // Processes editing of a task and its subtasks
 void editTask(Task& task);
 
-Item createSubTask();
+Item createSubtask();
 
 void editSubtask(Item& subtask);
 
