@@ -132,17 +132,17 @@ int menuChooseTask(const TaskGroup& list)
 void editTask(Task& task)
 {
   const int MIN_OPTION = 1;
-  const int MAX_OPTION = 4;
+  const int MAX_OPTION = 5;
 
   const int LINE_LENGTH = 255;
 
   const int MIN_SUB = 1;
 
   const int MIN_SUB_OPTION = 1;
-  const int MAX_SUB_OPTION = 3;
+  const int MAX_SUB_OPTION = 4;
 
   int option = 0;
-  char continueEdit = 'n';
+  char continueEdit = 'm';
 
   int subOption = 0;
   int subNumber = 0;
@@ -156,7 +156,7 @@ void editTask(Task& task)
   do
   {
     option = 0;
-    continueEdit = 'n';
+    continueEdit = 'm';
     subOption = 0;
     subNumber = 0;
     max_sub = task.getNumSubtasks();
@@ -169,6 +169,7 @@ void editTask(Task& task)
     cout << "2. Edit Priority" << endl;
     cout << "3. Edit Status" << endl;
     cout << "4. Edit Subtasks" << endl;
+    cout << "5. Cancel" << endl;
 
     do
     {
@@ -183,31 +184,32 @@ void editTask(Task& task)
 
     switch (option)
     {
-      case 1:
+      case 1: // Edit Content
         cout << "Enter new content: ";
         getline(cin, content);
         task.setContent(content);
         break;
 
-      case 2:
+      case 2: // Edit Priority
         cout << "Enter Priority: ";
         cin >> priority;
         task.setPriority(priority);
         break;
 
-      case 3:
+      case 3: // Edit Status
         cout << "Enter Status: ";
         cin >> tempStatus;
         status = static_cast<Status>(tempStatus);
         task.setStatus(status);
         break;
 
-      case 4:
+      case 4: // Edit Subtasks
         cout << "\n\t----- Options -----" << endl;
         cout << "1. Edit Subtask" << endl;
         cout << "2. Add Subtask" << endl;
         cout << "3. Remove Subtask" << endl;
-        // TODO: cancel option
+        cout << "4. Cancel" << endl;
+
         do
         {
           cout << "Enter the option: ";
@@ -216,7 +218,7 @@ void editTask(Task& task)
             cout << "INVALID INPUT: Please try again." << endl;
         } while (subOption < MIN_SUB_OPTION || subOption > MAX_SUB_OPTION);
 
-        while ((subOption != 2) && (subNumber < MIN_SUB || subNumber > max_sub))
+        while ((subOption != 2 && subOption != 4) && (subNumber < MIN_SUB || subNumber > max_sub))
         {
           cout << "Enter the number of the subtask (" << MIN_SUB << " - " << max_sub << ") : ";
           cin >> subNumber;
@@ -236,18 +238,25 @@ void editTask(Task& task)
           case 3:
             task.pop_subtask(subNumber);
             break;
+          case 4:
+            continueEdit = 'n';
+            break;
         }
+        break;
+
+      case 5: // Cancel
+        continueEdit = 'n';
         break;
     }
 
-    do
+    while (continueEdit != 'n' && continueEdit != 'y')
     {
       cout << "Continue editing this task? (y/n) ";
       cin >> continueEdit;
 
       if (continueEdit != 'n' && continueEdit != 'y')
         cout << "INVALID INPUT: Please try again." << endl;
-    } while (continueEdit != 'n' && continueEdit != 'y');
+    }
     
   } while (continueEdit == 'y');
 
