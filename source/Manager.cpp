@@ -62,7 +62,7 @@ int menuTasks(const TaskGroup& list)
   cout << "1. Edit a task." << endl;
   cout << "2. Add a task." << endl;
   cout << "3. Remove a task." << endl;
-  cout << "4. Change list Name." << endl;
+  cout << "4. Change list name." << endl;
   cout << "5. Delete the list." << endl;
   cout << "6. Go back to list selection." << endl;
   
@@ -454,6 +454,22 @@ void removeTask(TaskGroup& list)
   {
     list.pop_task(input - 1);
   }
+
+  return;
+}
+
+void changeListName(const vector<TaskGroup>& groups, TaskGroup& list)
+{
+  string name = "";
+  do
+  {
+    cout << "Enter the new name for the list: ";
+    getline(cin, name);
+    if (!nameIsValid(groups, name))
+      cout << "NAME IS INVALID (ALREADY IN USE): Please try again." << endl;
+  } while (!nameIsValid(groups, name));
+  
+  list.setName(name);
 
   return;
 }

@@ -60,7 +60,7 @@ void addTask(TaskGroup& group);
 void removeTask(TaskGroup& list);
 
 // Changing the name of a list
-void changeListName(TaskGroup& list);
+void changeListName(const vector<TaskGroup>& groups, TaskGroup& list);
 
 // Deleting an entire list
 void deleteList(vector<TaskGroup>& groups);
