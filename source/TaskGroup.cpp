@@ -80,7 +80,7 @@ void TaskGroup::loadList()
 void TaskGroup::saveList()
 {
   ofstream fout;
-  fout.open("Lists/" + m_filename);
+  fout.open(m_filename);
 
   fout << getNumTasks() << endl;
 
@@ -133,7 +133,7 @@ void TaskGroup::setName(const string name)
 {
   const string OLD_FILE = m_filename;
 
-  m_filename = name + ".txt";
+  m_filename = "Lists\\" + name + ".txt";
   m_name = name;
   saveList(); // save the list with its new filename
 
