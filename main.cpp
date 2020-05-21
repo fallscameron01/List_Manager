@@ -13,9 +13,9 @@ int main()
 
   vector<TaskGroup> groups;
 
-  int listChoice = 0;
-  int taskOption = 0;
-  int taskChoice = 0;
+  int listChoice = 0; // selected list
+  int taskOption = 0; // selected menu option for tasks
+  int taskChoice = 0; // selected task from a list
 
   loadLists(groups);
 
@@ -53,6 +53,7 @@ int main()
           addTask(groups[listChoice]);
           break;
         case 3: // remove task
+          removeTask(groups[listChoice]);
           break;
         case 4: // change list name
           break;
