@@ -57,7 +57,7 @@ void editSubtask(Item& subtask);
 void addTask(TaskGroup& group);
 
 // Removing and deleting a task from a list
-void removeTask(TaskGroup& task);
+void removeTask(TaskGroup& list);
 
 // Changing the name of a list
 void changeListName(TaskGroup& list);

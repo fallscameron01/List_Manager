@@ -427,3 +427,33 @@ void addTask(TaskGroup& group)
 
   return;
 }
+
+void removeTask(TaskGroup& list)
+{
+  const int MIN_INPUT = 1;
+  const int MAX_INPUT = list.getNumTasks() + 1;
+
+  int input;
+
+  cout << "\t----- TASKS -----" << endl;
+  for (int i=MIN_INPUT; i<MAX_INPUT; i++)
+  {
+    cout << i << ". " << list.getTask(i-1);
+  }
+  cout << endl;
+
+  do
+  {
+    cout << "Enter the number of the task you want to remove or " << MAX_INPUT << " to cancel: ";
+    cin >> input;
+    if (input < MIN_INPUT || input > MAX_INPUT)
+      cout << "INVALID INPUT: Please try again." << endl;
+  } while (input < MIN_INPUT || input > MAX_INPUT);
+
+  if (input != MAX_INPUT)
+  {
+    list.pop_task(input - 1);
+  }
+
+  return;
+}
