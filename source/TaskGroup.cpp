@@ -77,6 +77,32 @@ void TaskGroup::loadList()
   return;
 }
 
+void TaskGroup::saveList()
+{
+  ofstream fout;
+  fout.open("Lists/" + m_filename);
+
+  fout << getNumTasks() << endl;
+
+  for (Task & t : m_tasks)
+  {
+    fout << t.getContent() << endl;
+    fout << t.getPriority() << endl;
+    fout << t.getStatus() << endl;
+
+    fout << t.getNumSubtasks() << endl;
+    for (int i = 0; i < t.getNumSubtasks(); i++)
+    {
+      fout << t.getSubtask(i).getContent() << endl;
+      fout << t.getSubtask(i).getPriority() << endl;
+      fout << t.getSubtask(i).getStatus() << endl;
+    }
+  }
+
+  fout.close();
+  return;
+}
+
 void TaskGroup::printTasks() const
 {
   const int NUM_TASKS = m_tasks.size();
@@ -101,6 +127,11 @@ void TaskGroup::pop_task(const int index)
 {
   m_tasks.erase(m_tasks.begin() + index);
   return;
+}
+
+void TaskGroup::setName(const string name)
+{
+  
 }
 
 /*---------- TaskGroup Friend Functions ----------*/

@@ -39,6 +39,12 @@ class TaskGroup
     void loadList();
 
     /*
+      Description: Saves the list to the file with its filename.
+      Returns: none.
+    */
+    void saveList();
+
+    /*
       Description: Prints the tasks' content to the console with an associated number.
       Returns: none.
     */
@@ -63,6 +69,13 @@ class TaskGroup
       Returns: string - the name of the list.
     */
     string getName() const { return m_name; }
+
+    /*
+      Description: Changes the name and filename of the list. The list is saved to the new filename.
+      Parameters: name - the new name.
+      Returns: none.
+    */
+    void setName(const string name);
 
     /*
       Description: Returns the number of tasks in the list.
