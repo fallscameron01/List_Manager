@@ -52,6 +52,13 @@ class TaskGroup
     void push_task(const Task& task);
 
     /*
+      Description: Pops a task from the given index in m_tasks.
+      Parameters: index - the index of the task to pop.
+      Returns: none.
+    */
+    void pop_task(const int index);
+
+    /*
       Description: Returns the name of the list.
       Returns: string - the name of the list.
     */

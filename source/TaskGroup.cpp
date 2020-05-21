@@ -97,6 +97,12 @@ void TaskGroup::push_task(const Task& task)
   return;
 }
 
+void TaskGroup::pop_task(const int index)
+{
+  m_tasks.erase(m_tasks.begin() + index);
+  return;
+}
+
 /*---------- TaskGroup Friend Functions ----------*/
 
 ostream& operator<<(ostream& out, const TaskGroup& group)
