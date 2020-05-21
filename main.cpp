@@ -56,6 +56,7 @@ int main()
           removeTask(groups[listChoice]);
           break;
         case 4: // change list name
+          changeListName(groups, groups[listChoice]);
           break;
         case 5: // delete list
           break;
