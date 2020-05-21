@@ -7,7 +7,11 @@
 #ifndef TASKGROUP_H
 #define TASKGROUP_H
 
+#include <cstdio>
+
 #include "Task.h"
+
+using namespace std;
 
 // The TaskGroup class represents a list of tasks.
 class TaskGroup

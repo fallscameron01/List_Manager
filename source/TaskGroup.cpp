@@ -131,7 +131,15 @@ void TaskGroup::pop_task(const int index)
 
 void TaskGroup::setName(const string name)
 {
-  
+  const string OLD_FILE = m_filename;
+
+  m_filename = name + ".txt";
+  m_name = name;
+  saveList(); // save the list with its new filename
+
+  remove(OLD_FILE.c_str()); // remove the old file
+
+  return;
 }
 
 /*---------- TaskGroup Friend Functions ----------*/
