@@ -49,16 +49,20 @@ int menuChooseTask(const TaskGroup& list);
 // Processes editing of a task and its subtasks
 void editTask(Task& task);
 
+Item createSubtask();
+
+void editSubtask(Item& subtask);
+
 // Adding a new task to a list
 void addTask(TaskGroup& group);
 
 // Removing and deleting a task from a list
-void removeTask(TaskGroup& task);
+void removeTask(TaskGroup& list);
 
 // Changing the name of a list
-void changeListName(TaskGroup& list);
+void changeListName(const vector<TaskGroup>& groups, TaskGroup& list);
 
-// Deleting an entire list
-void deleteList(vector<TaskGroup>& groups);
+// Confirm if the list will be deleted
+bool confirmDelete(string listName);
 
 #endif

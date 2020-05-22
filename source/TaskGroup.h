@@ -7,7 +7,11 @@
 #ifndef TASKGROUP_H
 #define TASKGROUP_H
 
+#include <cstdio>
+
 #include "Task.h"
+
+using namespace std;
 
 // The TaskGroup class represents a list of tasks.
 class TaskGroup
@@ -39,6 +43,18 @@ class TaskGroup
     void loadList();
 
     /*
+      Description: Saves the list to the file with its filename.
+      Returns: none.
+    */
+    void saveList();
+
+    /*
+      Description: Deletes the file associated with the list.
+      Returns: none.
+    */
+    void deleteList();
+
+    /*
       Description: Prints the tasks' content to the console with an associated number.
       Returns: none.
     */
@@ -52,10 +68,24 @@ class TaskGroup
     void push_task(const Task& task);
 
     /*
+      Description: Pops a task from the given index in m_tasks.
+      Parameters: index - the index of the task to pop.
+      Returns: none.
+    */
+    void pop_task(const int index);
+
+    /*
       Description: Returns the name of the list.
       Returns: string - the name of the list.
     */
     string getName() const { return m_name; }
+
+    /*
+      Description: Changes the name and filename of the list. The list is saved to the new filename.
+      Parameters: name - the new name.
+      Returns: none.
+    */
+    void setName(const string name);
 
     /*
       Description: Returns the number of tasks in the list.

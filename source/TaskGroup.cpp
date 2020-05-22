@@ -77,6 +77,39 @@ void TaskGroup::loadList()
   return;
 }
 
+void TaskGroup::saveList()
+{
+  ofstream fout;
+  fout.open(m_filename);
+
+  fout << getNumTasks() << endl;
+
+  for (Task & t : m_tasks)
+  {
+    fout << t.getContent() << endl;
+    fout << t.getPriority() << endl;
+    fout << t.getStatus() << endl;
+
+    fout << t.getNumSubtasks() << endl;
+    for (int i = 0; i < t.getNumSubtasks(); i++)
+    {
+      fout << t.getSubtask(i).getContent() << endl;
+      fout << t.getSubtask(i).getPriority() << endl;
+      fout << t.getSubtask(i).getStatus() << endl;
+    }
+  }
+
+  fout.close();
+  return;
+}
+
+void TaskGroup::deleteList()
+{
+  remove(m_filename.c_str());
+
+  return;
+}
+
 void TaskGroup::printTasks() const
 {
   const int NUM_TASKS = m_tasks.size();
@@ -94,6 +127,25 @@ void TaskGroup::printTasks() const
 void TaskGroup::push_task(const Task& task)
 {
   m_tasks.push_back(task);
+  return;
+}
+
+void TaskGroup::pop_task(const int index)
+{
+  m_tasks.erase(m_tasks.begin() + index);
+  return;
+}
+
+void TaskGroup::setName(const string name)
+{
+  const string OLD_FILE = m_filename;
+
+  m_filename = "Lists\\" + name + ".txt";
+  m_name = name;
+  saveList(); // save the list with its new filename
+
+  remove(OLD_FILE.c_str()); // remove the old file
+
   return;
 }
 
