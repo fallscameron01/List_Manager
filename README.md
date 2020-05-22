@@ -1,4 +1,4 @@
-# list_manager
+# List_Manager
  A list-making program to help you manage your tasks.
 
 ## File Formatting for Lists

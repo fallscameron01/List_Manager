@@ -14,6 +14,12 @@ void Task::push_subtask(const Item& subtask)
   return;
 }
 
+void Task::pop_subtask(const int index)
+{
+  m_subtasks.erase(m_subtasks.begin() + index);
+  return;
+}
+
 void Task::printSubtasks() const
 {
   const int NUM_SUBTASKS = m_subtasks.size();

@@ -29,10 +29,30 @@ class Task :
     void push_subtask(const Item& subtask);
 
     /*
+      Description: Pops a subtask at the given index in m_subtasks.
+      Parameters: index - the index of the subtask to pop.
+      Returns: none.
+    */
+    void pop_subtask(const int index);
+
+    /*
       Description: Prints the subtasks of the task to the console.
       Returns: none.
     */
     void printSubtasks() const;
+
+    /*
+      Description: Returns the number of subtasks.
+      Returns: int - number of subtasks in m_subtasks.
+    */
+    int getNumSubtasks() const { return m_subtasks.size(); }
+
+    /*
+      Description: Returns the subtask stored at the given index in m_subtasks.
+      Parameters: index - the index of the subtask.
+      Returns: Item - the subtask at the given index.
+    */
+    Item& getSubtask(const int index) { return m_subtasks[index]; }
 
     /*
       Description: Outputs the given Task to the ostream.
