@@ -59,6 +59,11 @@ int main()
           changeListName(groups, groups[listChoice]);
           break;
         case 5: // delete list
+          if (confirmDelete(groups[listChoice].getName()))
+          {
+            groups[listChoice].deleteList();
+            groups.erase(groups.begin() + listChoice);
+          }
           break;
         default: // go back (case 6)
           break;
