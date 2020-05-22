@@ -49,6 +49,12 @@ class TaskGroup
     void saveList();
 
     /*
+      Description: Deletes the file associated with the list.
+      Returns: none.
+    */
+    void deleteList();
+
+    /*
       Description: Prints the tasks' content to the console with an associated number.
       Returns: none.
     */

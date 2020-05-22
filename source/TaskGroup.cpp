@@ -103,6 +103,13 @@ void TaskGroup::saveList()
   return;
 }
 
+void TaskGroup::deleteList()
+{
+  remove(m_filename.c_str());
+
+  return;
+}
+
 void TaskGroup::printTasks() const
 {
   const int NUM_TASKS = m_tasks.size();
