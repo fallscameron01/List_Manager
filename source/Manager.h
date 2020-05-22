@@ -9,7 +9,6 @@
 
 #define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING
 
-// TODO: Update include for filesystem
 #include <experimental/filesystem>
 #include <vector>
 #include <string>

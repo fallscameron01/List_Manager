@@ -225,7 +225,6 @@ void editTask(Task& task)
             cout << "INVALID INPUT: Please try again." << endl;
         }
         subNumber--; // remove 1 for index accessing
-        // TODO: No subtasks?
 
         cin.ignore(LINE_LENGTH, '\n');
         cout << endl;
@@ -287,7 +286,7 @@ Item createSubtask()
 
   newSub.setContent(content);
   newSub.setPriority(priority);
-  newSub.setStatus(status); // TODO: add overload with int parameter
+  newSub.setStatus(status);
 
   return newSub;
 }
