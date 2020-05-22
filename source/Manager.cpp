@@ -473,3 +473,18 @@ void changeListName(const vector<TaskGroup>& groups, TaskGroup& list)
 
   return;
 }
+
+bool confirmDelete(string listName)
+{
+  char option = 'n';
+
+  do
+  {
+    cout << "Are you sure you want to delete " << listName << " (y/n) ? THIS CANNOT BE UNDONE: ";
+    cin >> option;
+    if (option != 'n' && option != 'y')
+      cout << "INVALID INPUT: Please try again." << endl;
+  } while (option != 'n' && option != 'y');
+
+  return (option == 'y' ? true : false);
+}
