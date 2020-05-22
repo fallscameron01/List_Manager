@@ -23,46 +23,102 @@ using namespace std;
 
 /*---------- File Management ----------*/
 
-// loads all the lists in the directory
+/*
+  Description: Loads all lists in the directory Lists/ into groups.
+  Parameters: groups - holds the loaded lists
+  Returns: none.
+*/
 void loadLists(vector<TaskGroup>& groups);
 
+/*
+  Description: Checks if a list name is valid.
+  Parameters: groups - all the lists, to check if the name is already in use.
+              name - the name being checked.
+  Returns: bool - whether or not the name is valid.
+*/
 bool nameIsValid(const vector<TaskGroup>& groups, const string& name);
 
 /*---------- Menus ----------*/
 
-// Menu for selecting a list
+/*
+  Description: Displays a menu for selecting a list.
+  Parameters: groups - the lists.
+  Returns: int - the index of the selected list in groups.
+*/
 int menuLists(const vector<TaskGroup>& groups);
 
-// Menu for options on a list
+/*
+  Description: Displays a menu for selecting an option to perform on a selected list.
+  Parameters: list - the selected list to perform an action on.
+  Returns: int - the selected option.
+*/
 int menuTasks(const TaskGroup& list);
 
 /*---------- List Management ----------*/
 
-// Creating a new list
+/*
+  Description: Displays prompts for creating a new list.
+  Parameters: gropups - the group of lists
+  Returns: none.
+*/
 void createNewList(vector<TaskGroup>& groups);
 
 /*---------- Task Management ----------*/
 
-// Menu for selecting a task from a list to edit
+/*
+  Description: Displays a menu for selecting a task from a list.
+  Parameters: list - the selected list.
+  Returns: int - the index of the task
+*/
 int menuChooseTask(const TaskGroup& list);
 
-// Processes editing of a task and its subtasks
+/*
+  Description: Displays prompts for editing a task and its subtasks.
+  Parameters: task - the selected task.
+  Returns: none.
+*/
 void editTask(Task& task);
 
+/*
+  Description: Displays prompts for creating a subtask.
+  Returns: Item - the subtask.
+*/
 Item createSubtask();
 
+/*
+  Description: Displays prompts for editing a subtask.
+  Parameters: subtask - the selected subtask for editing.
+  Returns: none.
+*/
 void editSubtask(Item& subtask);
 
-// Adding a new task to a list
+/*
+  Description: Displays prompts for creating a new task.
+  Parameters: group - the list to add the task to.
+  Returns: none.
+*/
 void addTask(TaskGroup& group);
 
-// Removing and deleting a task from a list
+/*
+  Description: Removes and deletes a task from a list.
+  Parameters: list - the list to delete a task from.
+  Returns: none.
+*/
 void removeTask(TaskGroup& list);
 
-// Changing the name of a list
+/*
+  Description: Displays prompts to change the name of a list.
+  Parameters: groups - the vector containing all lists.
+              list - the list to rename.
+  Returns: none.
+*/
 void changeListName(const vector<TaskGroup>& groups, TaskGroup& list);
 
-// Confirm if the list will be deleted
+/*
+  Description: Displays a confirmation prompt before the deletion of a list.
+  Parameters: listName - the name of the list set to be deleted.
+  Returns: bool - whether or not the deletion can proceed.
+*/
 bool confirmDelete(string listName);
 
 #endif
