@@ -1,7 +1,7 @@
 /*
   Programmer: Cameron Falls
   File: Status.cpp
-  Purpose: This file contains the function implementations of the functions defined in Status.h
+  Purpose: This file contains the function implementations of the operator overloads for the enumeration Status.
 */
 
 #include "Status.h"
