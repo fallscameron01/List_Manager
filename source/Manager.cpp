@@ -278,9 +278,8 @@ Item createSubtask()
   cout << "Enter the priority of the new subtask: ";
   cin >> priority;
 
-  cout << endl;
   printAssociations();
-  cout << "Enter the status of the new subtask: ";
+  cout << "Enter the status of the new subtask (0-4): ";
   cin >> status;
 
   newSub.setContent(content);
@@ -346,7 +345,7 @@ void editSubtask(Item& subtask)
 
       case 3: // Edit Status
         printAssociations();
-        cout << "Enter Status: ";
+        cout << "Enter Status (0-4): ";
         cin >> status;
         subtask.setStatus(status);
         break;
@@ -386,9 +385,8 @@ void addTask(TaskGroup& group)
   cout << "Enter the priority: ";
   cin >> priority;
   
-  cout << endl;
   printAssociations();
-  cout << "Enter the status: ";
+  cout << "Enter the status (0-4): ";
   cin >> status;
 
   newTask.setContent(content);
@@ -409,9 +407,8 @@ void addTask(TaskGroup& group)
     cout << "Enter the priority of subtask " << i << ": ";
     cin >> priority;
 
-    cout << endl;
     printAssociations();
-    cout << "Enter the status of subtask " << i << ": ";
+    cout << "Enter the status of subtask " << i << " (0-4): ";
     cin >> status;
 
     subtask.setContent(content);

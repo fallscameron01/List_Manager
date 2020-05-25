@@ -8,7 +8,7 @@
 
 void printAssociations()
 {
-  cout << "\t--- Valid Status ---" << endl;
+  cout << "\n\t--- Valid Status ---" << endl;
   cout << "0 - Finished" << endl;
   cout << "1 - To do" << endl;
   cout << "2 - In progress" << endl;
