@@ -6,6 +6,18 @@
 
 #include "Status.h"
 
+void printAssociations()
+{
+  cout << "\t--- Valid Status ---" << endl;
+  cout << "0 - Finished" << endl;
+  cout << "1 - To do" << endl;
+  cout << "2 - In progress" << endl;
+  cout << "3 - Up next" << endl;
+  cout << "4 - Postponed" << endl;
+
+  return;
+}
+
 ostream& operator<<(ostream& out, const Status& status)
 {
   string message;

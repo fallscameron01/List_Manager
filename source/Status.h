@@ -24,6 +24,12 @@ enum Status
 };
 
 /*
+  Desciprtion: Outputs the associations of each status and corresponding integer.
+  Returns: none.
+*/
+void printAssociations();
+
+/*
   Description: Outputs the given Status to the ostream. The output is a string describing the enumeration state.
   Parameters: out - the ostream to output to.
               status - the Status to output.
