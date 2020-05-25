@@ -11,21 +11,23 @@ ostream& operator<<(ostream& out, const Status& status)
   string message;
   switch (status)
   {
-  case FINISHED:
-    message = "finished";
-    break;
-  case TODO:
-    message = "to do";
-    break;
-  case IN_PROGRESS:
-    message = "in progress";
-    break;
-  case UP_NEXT:
-    message = "up next";
-    break;
-  case POSTPONED:
-    message = "postponed";
-    break;
+    case FINISHED:
+      message = "finished";
+      break;
+    case TODO:
+      message = "to do";
+      break;
+    case IN_PROGRESS:
+      message = "in progress";
+      break;
+    case UP_NEXT:
+      message = "up next";
+      break;
+    case POSTPONED:
+      message = "postponed";
+      break;
+    default:
+      message = "invalid status";
   }
   out << message;
   return out;
