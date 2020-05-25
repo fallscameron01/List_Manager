@@ -73,6 +73,13 @@ class Item
     void setStatus(Status status) { m_status = status; }
 
     /*
+      Description: Sets the status of the Item.
+      Parameters: status - the status.
+      Returns: none.
+    */
+    void setStatus(int status) { m_status = static_cast<Status>(status); }
+
+    /*
       Description: Outputs the given Item to the ostream.
       Parameters: out - the ostream to output to.
                   item - the Item to output.

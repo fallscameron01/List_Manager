@@ -74,6 +74,11 @@ int main()
       createNewList(groups);
     }
 
+    for (TaskGroup t : groups) // save all lists
+    {
+      t.saveList();
+    }
+
   } while (listChoice != (groups.size() + 1));
 
   return 0;
