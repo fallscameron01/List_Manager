@@ -149,7 +149,6 @@ void editTask(Task& task)
   
   string content;
   short priority;
-  short tempStatus;
   Status status;
 
   do
@@ -196,9 +195,9 @@ void editTask(Task& task)
         break;
 
       case 3: // Edit Status
-        cout << "Enter Status: ";
-        cin >> tempStatus;
-        status = static_cast<Status>(tempStatus);
+        printAssociations();
+        cout << "Enter Status (0-4): ";
+        cin >> status;
         task.setStatus(status);
         break;
 
@@ -271,7 +270,6 @@ Item createSubtask()
 
   string content;
   short priority;
-  short tempStatus;
   Status status;
 
   cout << "Enter content for the new subtask: ";
@@ -280,9 +278,10 @@ Item createSubtask()
   cout << "Enter the priority of the new subtask: ";
   cin >> priority;
 
+  cout << endl;
+  printAssociations();
   cout << "Enter the status of the new subtask: ";
-  cin >> tempStatus;
-  status = static_cast<Status>(tempStatus);
+  cin >> status;
 
   newSub.setContent(content);
   newSub.setPriority(priority);
@@ -304,7 +303,6 @@ void editSubtask(Item& subtask)
 
   string content;
   short priority;
-  short tempStatus;
   Status status;
 
   do
@@ -347,9 +345,9 @@ void editSubtask(Item& subtask)
         break;
 
       case 3: // Edit Status
+        printAssociations();
         cout << "Enter Status: ";
-        cin >> tempStatus;
-        status = static_cast<Status>(tempStatus);
+        cin >> status;
         subtask.setStatus(status);
         break;
       case 4: // Cancel
@@ -378,7 +376,6 @@ void addTask(TaskGroup& group)
   string content;
 
   short priority;
-  short tempStatus;
   Status status;
 
   int numSubtasks;
@@ -389,9 +386,10 @@ void addTask(TaskGroup& group)
   cout << "Enter the priority: ";
   cin >> priority;
   
+  cout << endl;
+  printAssociations();
   cout << "Enter the status: ";
-  cin >> tempStatus;
-  status = static_cast<Status>(tempStatus);
+  cin >> status;
 
   newTask.setContent(content);
   newTask.setPriority(priority);
@@ -411,9 +409,10 @@ void addTask(TaskGroup& group)
     cout << "Enter the priority of subtask " << i << ": ";
     cin >> priority;
 
+    cout << endl;
+    printAssociations();
     cout << "Enter the status of subtask " << i << ": ";
-    cin >> tempStatus;
-    status = static_cast<Status>(tempStatus);
+    cin >> status;
 
     subtask.setContent(content);
     subtask.setPriority(priority);
