@@ -32,7 +32,6 @@ void TaskGroup::loadList()
 
   string content;
   short priority;
-  short temp_stat;
   Status stat;
 
   fin >> num_tasks;
@@ -44,8 +43,7 @@ void TaskGroup::loadList()
     fin.ignore(LINE_LENGTH, '\n');
     getline(fin, content); // content
     fin >> priority;
-    fin >> temp_stat;
-    stat = static_cast<Status>(temp_stat);
+    fin >> stat;
 
     task.setContent(content);
     task.setPriority(priority);
@@ -59,8 +57,7 @@ void TaskGroup::loadList()
       fin.ignore(LINE_LENGTH, '\n');
       getline(fin, content);
       fin >> priority;
-      fin >> temp_stat;
-      stat = static_cast<Status>(temp_stat);
+      fin >> stat;
 
       subtask.setContent(content);
       subtask.setPriority(priority);
@@ -95,7 +92,7 @@ void TaskGroup::saveList()
     {
       fout << t.getSubtask(i).getContent() << endl;
       fout << t.getSubtask(i).getPriority() << endl;
-      fout << t.getSubtask(i).getStatus() << endl;
+      fout << static_cast<int>(t.getSubtask(i).getStatus()) << endl;
     }
   }
 
