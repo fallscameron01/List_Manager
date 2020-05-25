@@ -85,7 +85,7 @@ void TaskGroup::saveList()
   {
     fout << t.getContent() << endl;
     fout << t.getPriority() << endl;
-    fout << t.getStatus() << endl;
+    fout << static_cast<int>(t.getStatus()) << endl;
 
     fout << t.getNumSubtasks() << endl;
     for (int i = 0; i < t.getNumSubtasks(); i++)
