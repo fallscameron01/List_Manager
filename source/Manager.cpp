@@ -149,7 +149,6 @@ void editTask(Task& task)
   
   string content;
   short priority;
-  short tempStatus;
   Status status;
 
   do
@@ -196,9 +195,9 @@ void editTask(Task& task)
         break;
 
       case 3: // Edit Status
-        cout << "Enter Status: ";
-        cin >> tempStatus;
-        status = static_cast<Status>(tempStatus);
+        printAssociations();
+        cout << "Enter Status (0-4): ";
+        cin >> status;
         task.setStatus(status);
         break;
 
@@ -217,7 +216,7 @@ void editTask(Task& task)
             cout << "INVALID INPUT: Please try again." << endl;
         } while (subOption < MIN_SUB_OPTION || subOption > MAX_SUB_OPTION);
 
-        while ((subOption != 2 && subOption != 4) && (subNumber < MIN_SUB || subNumber > max_sub))
+        while ((subOption != 2 && subOption != 4) && (subNumber < MIN_SUB || subNumber > max_sub) && (max_sub != 0))
         {
           cout << "Enter the number of the subtask (" << MIN_SUB << " - " << max_sub << ") : ";
           cin >> subNumber;
@@ -232,13 +231,19 @@ void editTask(Task& task)
         switch (subOption)
         {
           case 1: // edit subtask
-            editSubtask(task.getSubtask(subNumber));
+            if (max_sub != 0)
+              editSubtask(task.getSubtask(subNumber));
+            else
+              cout << "Task contains no subtasks to edit!" << endl;
             break;
           case 2: // add subtask
             task.push_subtask(createSubtask());
             break;
           case 3: // remove subtask
-            task.pop_subtask(subNumber);
+            if (max_sub != 0)
+              task.pop_subtask(subNumber);
+            else
+              cout << "Task contains no subtasks to remove!" << endl;
             break;
           case 4: // cancel
             continueEdit = 'y';
@@ -271,7 +276,6 @@ Item createSubtask()
 
   string content;
   short priority;
-  short tempStatus;
   Status status;
 
   cout << "Enter content for the new subtask: ";
@@ -280,9 +284,9 @@ Item createSubtask()
   cout << "Enter the priority of the new subtask: ";
   cin >> priority;
 
-  cout << "Enter the status of the new subtask: ";
-  cin >> tempStatus;
-  status = static_cast<Status>(tempStatus);
+  printAssociations();
+  cout << "Enter the status of the new subtask (0-4): ";
+  cin >> status;
 
   newSub.setContent(content);
   newSub.setPriority(priority);
@@ -304,7 +308,6 @@ void editSubtask(Item& subtask)
 
   string content;
   short priority;
-  short tempStatus;
   Status status;
 
   do
@@ -347,9 +350,9 @@ void editSubtask(Item& subtask)
         break;
 
       case 3: // Edit Status
-        cout << "Enter Status: ";
-        cin >> tempStatus;
-        status = static_cast<Status>(tempStatus);
+        printAssociations();
+        cout << "Enter Status (0-4): ";
+        cin >> status;
         subtask.setStatus(status);
         break;
       case 4: // Cancel
@@ -378,7 +381,6 @@ void addTask(TaskGroup& group)
   string content;
 
   short priority;
-  short tempStatus;
   Status status;
 
   int numSubtasks;
@@ -389,9 +391,9 @@ void addTask(TaskGroup& group)
   cout << "Enter the priority: ";
   cin >> priority;
   
-  cout << "Enter the status: ";
-  cin >> tempStatus;
-  status = static_cast<Status>(tempStatus);
+  printAssociations();
+  cout << "Enter the status (0-4): ";
+  cin >> status;
 
   newTask.setContent(content);
   newTask.setPriority(priority);
@@ -411,9 +413,9 @@ void addTask(TaskGroup& group)
     cout << "Enter the priority of subtask " << i << ": ";
     cin >> priority;
 
-    cout << "Enter the status of subtask " << i << ": ";
-    cin >> tempStatus;
-    status = static_cast<Status>(tempStatus);
+    printAssociations();
+    cout << "Enter the status of subtask " << i << " (0-4): ";
+    cin >> status;
 
     subtask.setContent(content);
     subtask.setPriority(priority);
