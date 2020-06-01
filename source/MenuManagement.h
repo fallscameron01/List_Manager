@@ -1,7 +1,7 @@
 /*
   Programmer: Cameron Falls
   File: MenuManagement.h
-  Purpose: This file contains the definitions for functions related to displaying menus.
+  Purpose: This file contains the declarations for functions related to displaying menus.
 */
 
 #ifndef MENUMANAGEMENT_H

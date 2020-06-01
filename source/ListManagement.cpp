@@ -1,3 +1,9 @@
+/*
+  Programmer: Cameron Falls
+  File: ListManagement.cpp
+  Purpose: This file contains the definitions for list-related functions.
+*/
+
 #include "ListManagement.h"
 
 void createNewList(vector<TaskGroup>& groups)

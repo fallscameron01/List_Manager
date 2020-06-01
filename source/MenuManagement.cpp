@@ -1,3 +1,9 @@
+/*
+  Programmer: Cameron Falls
+  File: MenuManagement.cpp
+  Purpose: This file contains the definitions for functions related to displaying menus.
+*/
+
 #include "MenuManagement.h"
 
 int menuLists(const vector<TaskGroup>& groups)

@@ -1,7 +1,7 @@
 /*
   Programmer: Cameron Falls
   File: FileManagement.h
-  Purpose: This file contains the definitions for file related functions.
+  Purpose: This file contains the declarations for file related functions.
 */
 
 #ifndef FILEMANAGEMENT_H

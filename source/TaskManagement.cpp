@@ -1,7 +1,7 @@
 /*
   Programmer: Cameron Falls
-  File: Manager.cpp
-  Purpose: This file contains function implementations for functions for use managing list from main.
+  File: TaskManagement.cpp
+  Purpose: This file contains function definitions for functions relating to tasks.
 */
 
 #include "TaskManagement.h"

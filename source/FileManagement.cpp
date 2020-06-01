@@ -1,3 +1,9 @@
+/*
+  Programmer: Cameron Falls
+  File: FileManagement.cpp
+  Purpose: This file contains the definitions for file related functions.
+*/
+
 #include "FileManagement.h"
 
 void loadLists(vector<TaskGroup>& groups)

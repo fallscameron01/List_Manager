@@ -1,7 +1,7 @@
 /*
   Programmer: Cameron Falls
   File: ListManagement.h
-  Purpose: This file contains the definitions for list-related functions.
+  Purpose: This file contains the declarations for list-related functions.
 */
 
 #ifndef LISTMANAGEMENT_H
