@@ -1,7 +1,7 @@
 /*
   Programmer: Cameron Falls
-  File: Manager.h
-  Purpose: This file contains function declarations for functions for use managing list from main.
+  File: TaskManagement.h
+  Purpose: This file contains function declarations for functions relating to tasks.
 */
 
 #ifndef TASKMANAGEMENT_H
