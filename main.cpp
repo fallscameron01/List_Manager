@@ -4,8 +4,11 @@
   Purpose: This file contains the program main.
 */
 
+#include "source/FileManagement.h"
+#include "source/ListManagement.h"
+#include "source/MenuManagement.h"
+#include "source/TaskManagement.h"
 #include "source/TaskGroup.h"
-#include "source/Manager.h"
 
 int main()
 {
