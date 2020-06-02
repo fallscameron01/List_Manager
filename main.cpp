@@ -4,8 +4,16 @@
   Purpose: This file contains the program main.
 */
 
+#include <iostream>
+#include <vector>
+
+#include "source/FileManagement.h"
+#include "source/ListManagement.h"
+#include "source/MenuManagement.h"
 #include "source/TaskGroup.h"
-#include "source/Manager.h"
+#include "source/TaskManagement.h"
+
+using namespace std;
 
 int main()
 {

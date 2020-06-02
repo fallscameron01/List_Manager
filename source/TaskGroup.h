@@ -8,6 +8,7 @@
 #define TASKGROUP_H
 
 #include <cstdio>
+#include <fstream>
 
 #include "Task.h"
 
