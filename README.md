@@ -1,5 +1,13 @@
 # List_Manager
- A list-making program to help you manage your tasks.
+ A console-based list-making program to help you manage your tasks.
+
+## Features
+
+- Ability to create and save lists.
+
+- Ability to add tasks and subtasks.
+
+- Ability to assign a task or subtask a priority and status.
 
 ## File Formatting for Lists
 
