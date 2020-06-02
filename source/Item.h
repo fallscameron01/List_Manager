@@ -7,13 +7,12 @@
 #ifndef ITEM_H
 #define ITEM_H
 
-#include <string>
-#include <fstream>
 #include <iostream>
-
-using namespace std;
+#include <string>
 
 #include "Status.h"
+
+using namespace std;
 
 // The Item class represents a subtask.
 class Item

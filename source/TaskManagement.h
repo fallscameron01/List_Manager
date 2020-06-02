@@ -7,9 +7,9 @@
 #ifndef TASKMANAGEMENT_H
 #define TASKMANAGEMENT_H
 
-#include <vector>
-#include <string>
 #include <iostream>
+#include <string>
+#include <vector>
 
 #include "TaskGroup.h"
 

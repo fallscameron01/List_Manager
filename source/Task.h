@@ -8,9 +8,10 @@
 #define TASK_H
 
 #include <vector>
-using std::vector;
 
 #include "Item.h"
+
+using namespace std;
 
 // The Task class represents a task. Task is a public child of Item.
 class Task :
